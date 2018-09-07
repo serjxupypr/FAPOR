@@ -1,0 +1,127 @@
+.testimonials {
+  padding: 115px 0;
+  background: #f7f7f7;
+
+  @include media('<=desktop') {
+    padding: 75px 0;
+  }
+
+  @include media('<=tablet') {
+    padding: 45px 0;
+  }
+
+  .section-heading {
+    margin: 0 0 64px;
+
+    @include media('<=desktop') {
+      margin: 0 0 40px;
+    }
+
+    @include media('<=tablet') {
+      margin: 0 0 34px;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .slick {
+
+    &-slide {
+      text-align: center;
+    }
+
+    &-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      z-index: 1;
+
+      &:focus {
+        outline: none;
+      }
+
+      span {
+        font-size: 25px;
+      }
+
+    }
+
+    &-next {
+      right: 10px;
+
+      @include media('<=widescreen', '>=tablet') {
+        right: 25px;
+      }
+    }
+
+    &-prev {
+      left: 10px;
+
+      @include media('<=widescreen', '>=tablet') {
+        left: 25px;
+      }
+    }
+  }
+
+  &-list {
+    position: static;
+  }
+
+  &-item {
+    display: block;
+    max-width: 870px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include media('<=desktop') {
+      max-width: 600px;
+    }
+
+    @include media('<=tablet') {
+      max-width: 600px;
+    }
+  }
+
+  .image-holder {
+    overflow: hidden;
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 31px;
+    border-radius: 50%;
+  }
+
+  .text-holder {
+    p {
+      margin: 0 0 37px;
+      line-height: 1.72;
+      letter-spacing: 0.45px;
+
+      @include media('<=tablet') {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .name {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: $gold;
+  }
+
+  .position {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+  }
+
+}

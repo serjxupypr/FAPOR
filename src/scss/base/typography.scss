@@ -1,0 +1,87 @@
+// Typography
+//
+// Base font styles for headings and links.
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  font-family: map-deep-get($headings, 'fonts', 'headings-font-family');
+  font-weight: 700;
+  margin: 0 0 0.5em;
+  color: map-deep-get($headings, 'fonts', 'headings-color');
+}
+
+h1, .h1 {
+  font-size: map-deep-get($headings, 'sizes', 'h1-font-size');
+  font-weight: 700;
+
+  @include media('<=desktop') {
+    font-size: 32px;
+  }
+
+  @include media('<=tablet') {
+    font-size: 24px;
+  }
+}
+
+h2, .h2 {
+  font-size: map-deep-get($headings, 'sizes', 'h2-font-size');
+  font-weight: 600;
+
+  @include media('<=desktop') {
+    font-size: 22px;
+  }
+
+  @include media('<=tablet') {
+    font-size: 20px;
+  }
+}
+
+h3, .h3 {
+  font-size: map-deep-get($headings, 'sizes', 'h3-font-size');
+  font-weight: 700;
+}
+
+h4, .h4 {
+  font-size: map-deep-get($headings, 'sizes', 'h4-font-size');
+}
+
+h5, .h5 {
+  font-size: map-deep-get($headings, 'sizes', 'h5-font-size');
+}
+
+h6, .h6 {
+  font-size: map-deep-get($headings, 'sizes', 'h6-font-size');
+}
+
+p {
+  font-family: map-deep-get($base, 'base-primary-font');
+  margin: 0 0 1em;
+}
+
+a {
+  color: map-get($base, 'base-link-color');
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.section-heading {
+  text-transform: uppercase;
+  text-align: center;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 78px;
+    height: 2px;
+    margin: 24px auto 0;
+    background: #24282f;
+  }
+
+}

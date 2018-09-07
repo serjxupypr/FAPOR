@@ -1,0 +1,36 @@
+.top-banner {
+  position: relative;
+  min-height: 284px;
+  padding: 81px 0;
+  background: url("../images/bg-maim-top_banner-1x.jpg") no-repeat center/cover;
+
+  @include media('retina2x') {
+    background: url("../images/bg-maim-top_banner-2x.jpg") no-repeat center/cover;
+  }
+
+  @include media('<=desktop') {
+    min-height: auto;
+    padding: 40px 0 60px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $top-banner-overlay-color;
+    z-index: 0;
+  }
+
+  & > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+  }
+}

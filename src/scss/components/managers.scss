@@ -1,0 +1,153 @@
+.managers {
+  padding: 150px 0 31px;
+
+  @include media('<=desktop') {
+    padding: 85px 0 31px;
+  }
+
+
+  @include media('<=tablet') {
+    padding: 35px 0 31px;
+  }
+
+  .section-heading {
+    margin: 0 0 34px;
+
+    &::after {
+      background: $gold;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+
+    @include media('<=desktop') {
+      justify-content: space-between;
+    }
+
+    @include media('<=phone') {
+      display: block;
+    }
+
+  }
+
+  &-item {
+    max-width: 312px;
+    margin-right: calc((100% - 312px*3)/2);
+
+    &:nth-child(3n) {
+      margin-right: 0;
+
+      @include media('<=tablet') {
+        margin: 0 0 20px;
+      }
+
+      @include media('<=phone') {
+        margin: 0 auto 20px;
+      }
+    }
+
+    &:nth-child(2n) {
+      @include media('<=tablet') {
+        margin: 0 0 20px 20px;
+      }
+
+      @include media('<=phone') {
+        margin: 0 auto 20px;
+      }
+    }
+
+    @include media('<=desktop') {
+      width: 100%;
+      max-width: 48%;
+      margin: 0 0 20px;
+    }
+
+    @include media('<=tablet') {
+      max-width: calc(100%/2 - 15px);
+    }
+
+    @include media('<=phone') {
+      width: 100%;
+      max-width: 312px;
+      margin: 0 auto 20px;
+    }
+
+    h3 {
+      margin: 0 0 3px;
+      font-size: 16px;
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: $gold;
+    }
+  }
+
+  .img-holder {
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .info {
+    @include media('<=tablet') {
+      width: 100%;
+    }
+
+    &-holder {
+      display: flex;
+      justify-content: space-between;
+      padding: 23px 10px;
+
+      @include media('<=tablet') {
+        padding: 15px 0;
+        display: block;
+      }
+    }
+  }
+
+  .social-links {
+    @extend %listreset;
+    padding: 5px 0 0;
+
+    @include media('<=tablet') {
+      padding: 8px 0 0;
+    }
+
+    li {
+
+      &:first-child {
+        @include media('<=tablet') {
+          margin-left: 0;
+        }
+      }
+
+    }
+
+    [class^=icon-] {
+      color: #fff;
+      background: #dedede;
+
+      &:hover {
+        color: $gold;
+        background: #24282f;
+        transition: background .3s linear, color .3s linear;
+      }
+    }
+  }
+}

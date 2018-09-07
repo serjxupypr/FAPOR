@@ -1,0 +1,118 @@
+.main-header {
+  background: #24282f;
+
+  @include media('<=desktop') {
+    padding: 15px 5px;
+    position: relative;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-navigation {
+    font-size: 14px;
+
+    @include media('<=desktop') {
+      position: absolute;
+      display: none;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      text-align: center;
+      background: #24282f;
+      z-index: 2;
+    }
+
+    @include media('<tablet') {
+      padding: 0 0 10px;
+      text-align: left;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 0 29px;
+      list-style: none;
+
+      @include media('<=desktop') {
+        margin: 0 12px;
+      }
+
+      @include media('<tablet') {
+        display: block;
+        margin: 0;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: $gold;
+        opacity: 0;
+        transition: opacity .2s linear;
+
+        @include media('<tablet') {
+          display: none;
+        }
+      }
+
+      &.active,
+      &:hover {
+
+        &::before {
+          opacity: 1;
+          transition: opacity .2s linear;
+        }
+
+        @include media('<tablet') {
+          a {
+            color: $gold;
+          }
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: 42px 15px;
+      color: $header-nav-color;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.4px;
+
+      @include media('<=desktop') {
+        padding: 32px 15px;
+      }
+
+      @include media('<tablet') {
+        padding: 13px 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.logo-holder {
+  span {
+    display: block;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+  }
+}
+
+
+

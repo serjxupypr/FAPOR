@@ -1,0 +1,118 @@
+.mobile-menu-opener {
+
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $gold;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    background: $gold;
+  }
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+
+  &.opened {
+    span {
+      opacity: 0;
+    }
+
+    &::after {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::before {
+      top: 50%;
+      bottom: auto;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  @include media('>desktop') {
+    display: none;
+  }
+}
+
+.load-more {
+  @include animate(color background);
+  display: block;
+  width: 164px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $load-more-bnt-color;
+  cursor: pointer;
+  border: 1px solid $load-more-bnt-color;
+  border-radius: 30px;
+  letter-spacing: 0.8px;
+  background: transparent;
+
+  &:hover {
+    @include animate(color background);
+    color: #fff;
+    background: $load-more-bnt-color;
+  }
+
+  @include media('<tablet') {
+    font-size: 14px;
+    line-height: 32px;
+  }
+}
+
+.social-links {
+  margin: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 0 0 0 3px;
+  }
+
+  a {
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  [class^=icon-] {
+    display: block;
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background .3s linear, color .3s linear, border .3s linear;
+
+    &:hover {
+      transition: background .3s linear, color .3s linear, border .3s linear;
+    }
+  }
+}
